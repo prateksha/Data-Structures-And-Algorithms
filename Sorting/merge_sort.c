@@ -54,10 +54,8 @@ void mergesort(int arr[],int l, int r)
     return;
   else
   {
-  //  printf("l=%d m=%d r=%d\n",l,m,r);
     mergesort(arr,l,m);
     mergesort(arr,m+1,r);
-    //printf("yo\n");
     merge(arr,l,m,r);
   }
 }
@@ -65,9 +63,14 @@ void mergesort(int arr[],int l, int r)
 
 int main()
 {
-  int arr[] = {2,4,1,9};
-  mergesort(arr,0,3);
-  printf("sorted\n");
-  print(arr,4);
+  int n;
+  scanf("%d",&n);
+  int arr[100];
+  int i;
+  for(i=0; i<n; i++)
+    scanf("%d",&arr[i]);
+  mergesort(arr,0,n-1);
+  print(arr,n);
+  printf("\n");
   return 0;
 }
